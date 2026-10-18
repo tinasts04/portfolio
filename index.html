@@ -290,7 +290,13 @@ h2{font-size:clamp(2.4rem,4.8vw,4.2rem);margin-bottom:3.5vh;letter-spacing:-.025
 .cf ::placeholder{color:#ffffff6e}
 .cf input:not([type=radio]):focus,.cf textarea:focus,.cf select:focus{border-color:#e9b9a4;background:#ffffff1f;box-shadow:0 0 0 3px #c2694a40}
 .cf .bad{border-color:#f0a58d!important}
-.err{font-style:normal;font-size:.78rem;color:#ffc1ab;min-height:0;line-height:1.3}
+.err{font-style:normal;font-size:.8rem;color:#ffc1ab;min-height:0;line-height:1.35}
+.err:not(:empty):before{content:"\26A0\FE0E";margin-right:.4em;}
+.fix{all:unset;cursor:pointer;color:#fff;text-decoration:underline;font-weight:600}
+.phone{display:flex;min-width:0}
+.phone select{flex:0 0 auto;width:auto;max-width:46%;border-top-right-radius:0;border-bottom-right-radius:0;border-right-color:#ffffff1f;padding-right:.4rem;text-overflow:ellipsis}
+.phone input{flex:1 1 auto;min-width:0;border-top-left-radius:0!important;border-bottom-left-radius:0!important}
+html.has-cur .fix,html.has-cur .phone select{cursor:pointer!important}
 .err:empty{display:none}
 .cf-appt{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1),margin .45s;margin-bottom:0}
 .cf-appt.open{grid-template-rows:1fr;margin-bottom:1.2rem}
@@ -309,6 +315,10 @@ html.has-cur .cf input:not([type=radio]),html.has-cur .cf textarea{cursor:text!i
 html.has-cur .cf select,html.has-cur .cf-types label,html.has-cur .btn{cursor:pointer!important}
 #dot.f{opacity:0!important}
 @media(max-width:700px){.cf-grid,.cf-grid.three{grid-template-columns:1fr}.btn{width:100%;text-align:center}}
+/* ---- business domain dropdown ---- */
+.cf select:required:invalid{color:#ffffff9e}
+.dom-other{display:none;margin-top:.55rem}
+.dom-other.show{display:block}
 </style></head>
 <body class="lock">
 <div id="prog"></div>
@@ -347,11 +357,7 @@ html.has-cur .cf select,html.has-cur .cf-types label,html.has-cur .btn{cursor:po
  <h2>Work</h2>
  <div class="tl" id="tl"><div class="rail"></div><div class="beam" id="beam"></div><div class="orb" id="orb"></div>
   <div class="tg"><i class="nd big"></i><p class="mono dt">Chennai · Hybrid</p><div class="tc"><h4>ZeAI Soft</h4></div></div>
-  <article class="ti"><i class="nd"></i><p class="mono dt">May 2026 — Oct 2026</p><div class="tc"><h3>AI Engineer & L&D Manager</h3><p class="mono co">Full-time</p><ul><li>Built the AI recommendation engine for a BeautyTech SaaS, combining a scikit-learn model with LLM APIs to suggest personalised skincare routines from skin type, allergies and lifestyle.</li><li>Developed the React frontend: skin-profile questionnaires, routine recommendations and a regularity-tracking dashboard with AI insights.</li><li>Built Flask and Node.js APIs serving predictions and LLM responses, with MongoDB persistence.</li><li>Ran QA, integration tests and Git workflows; trained fresher engineers in full-stack development and placed them on live product teams.</li></ul></div></article>
-  <article class="ti"><i class="nd"></i><p class="mono dt">Apr 2026 — May 2026</p><div class="tc"><h3>Community Lead</h3><p class="mono co">Full-time</p><ul><li>Managed and engaged the community daily, keeping it vibrant and collaborative.</li><li>Planned and ran workshops, events and hackathons, and onboarded new members.</li></ul><div class="tags"><span>Community Management</span><span>Startup Ecosystem Development</span></div></div></article>
-  <article class="ti"><i class="nd"></i><p class="mono dt">Feb 2026 — Apr 2026</p><div class="tc"><h3>Head of Global Immersion Program</h3><p class="mono co">Full-time</p><ul><li>Led global learning and innovation initiatives and international collaborations, including partnerships with APU, Malaysia, for immersion programs.</li></ul><div class="tags"><span>Program Management</span><span>International Relations</span></div></div></article>
-  <article class="ti"><i class="nd"></i><p class="mono dt">Dec 2025 — Apr 2026</p><div class="tc"><h3>Associate Head of L&D</h3><p class="mono co">Full-time</p><ul><li>Led learning and development initiatives and training sessions for the team.</li></ul></div></article>
-  <article class="ti"><i class="nd"></i><p class="mono dt">Oct 2025 — Apr 2026</p><div class="tc"><h3>Tech Trainee</h3><p class="mono co">Apprenticeship</p><ul><li>Started at ZeAI Soft as a tech trainee before moving into engineering, learning and community leadership roles.</li></ul></div></article>
+  <article class="ti"><i class="nd"></i><p class="mono dt">Oct 2025 — Oct 2026</p><div class="tc"><h3>Tech Trainee</h3><p class="mono co">Full-time</p><ul><li>Built the AI recommendation engine for a BeautyTech SaaS, combining a scikit-learn model with LLM APIs to suggest personalised skincare routines from skin type, allergies and lifestyle.</li><li>Developed the React frontend: skin-profile questionnaires, routine recommendations and a regularity-tracking dashboard with AI insights.</li><li>Built Flask and Node.js APIs serving predictions and LLM responses, with MongoDB persistence.</li><li>Ran QA, integration tests and Git workflows; trained fresher engineers in full-stack development and placed them on live product teams.</li><li>Led learning and development initiatives and training sessions for the team.</li><li>Managed and engaged the community daily, keeping it vibrant and collaborative.</li><li>Planned and ran workshops, events and hackathons, and onboarded new members.</li><li>Led global learning and innovation initiatives and international collaborations, including partnerships with APU, Malaysia, for immersion programs.</li></ul><div class="tags"><span>Community Management</span><span>Startup Ecosystem Development</span><span>Program Management</span><span>International Relations</span></div></div></article>
   <div class="tg"><i class="nd big"></i><p class="mono dt">Internship</p><div class="tc"><h4>Cybertracs Technologies</h4></div></div>
   <article class="ti"><i class="nd"></i><p class="mono dt">Jul — Aug 2024</p><div class="tc"><h3>Web Development Intern</h3><p class="mono co">Cybertracs Technologies & Research</p><ul><li>Designed and deployed a real-time AI chatbot with Flask and REST APIs, cutting query resolution time by 40%.</li><li>Built responsive, accessible React UIs with optimised rendering and cross-browser support.</li></ul></div></article>
  </div>
@@ -391,8 +397,8 @@ html.has-cur .cf select,html.has-cur .cf-types label,html.has-cur .btn{cursor:po
   <div class="cf-grid">
    <div class="fld"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" placeholder="Your name" required><em class="err"></em></div>
    <div class="fld"><label for="f-mail">Email</label><input id="f-mail" name="email" type="email" autocomplete="email" placeholder="you@company.com" required><em class="err"></em></div>
-   <div class="fld"><label for="f-tel">Phone / WhatsApp</label><input id="f-tel" name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210" required><em class="err"></em></div>
-   <div class="fld"><label for="f-dom">Business domain</label><input id="f-dom" name="domain" list="domains" placeholder="e.g. Retail, Healthcare, Education" required><datalist id="domains"><option value="Retail &amp; e-commerce"><option value="Healthcare"><option value="Education"><option value="Real estate"><option value="Food &amp; hospitality"><option value="Fashion &amp; beauty"><option value="Finance"><option value="Technology / SaaS"><option value="Travel"><option value="Other"></datalist><em class="err"></em></div>
+   <div class="fld"><label for="f-tel">Phone / WhatsApp</label><div class="phone"><select id="f-cc" name="cc" aria-label="Country code"><option value="+91" selected>India (+91)</option><option value="+1">USA / Canada (+1)</option><option value="+44">UK (+44)</option><option value="+971">UAE (+971)</option><option value="+966">Saudi Arabia (+966)</option><option value="+974">Qatar (+974)</option><option value="+965">Kuwait (+965)</option><option value="+968">Oman (+968)</option><option value="+973">Bahrain (+973)</option><option value="+65">Singapore (+65)</option><option value="+60">Malaysia (+60)</option><option value="+61">Australia (+61)</option><option value="+64">New Zealand (+64)</option><option value="+94">Sri Lanka (+94)</option><option value="+977">Nepal (+977)</option><option value="+880">Bangladesh (+880)</option><option value="+92">Pakistan (+92)</option><option value="+62">Indonesia (+62)</option><option value="+63">Philippines (+63)</option><option value="+66">Thailand (+66)</option><option value="+84">Vietnam (+84)</option><option value="+81">Japan (+81)</option><option value="+82">South Korea (+82)</option><option value="+86">China (+86)</option><option value="+852">Hong Kong (+852)</option><option value="+49">Germany (+49)</option><option value="+33">France (+33)</option><option value="+31">Netherlands (+31)</option><option value="+39">Italy (+39)</option><option value="+34">Spain (+34)</option><option value="+353">Ireland (+353)</option><option value="+41">Switzerland (+41)</option><option value="+46">Sweden (+46)</option><option value="+47">Norway (+47)</option><option value="+45">Denmark (+45)</option><option value="+27">South Africa (+27)</option><option value="+234">Nigeria (+234)</option><option value="+254">Kenya (+254)</option><option value="+20">Egypt (+20)</option><option value="+55">Brazil (+55)</option><option value="+52">Mexico (+52)</option></select><input id="f-tel" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="98765 43210" required></div><em class="err"></em></div>
+   <div class="fld"><label for="f-dom">Business domain</label><select id="f-dom" name="domain" required><option value="" selected disabled>Select your business domain</option><option>Retail &amp; e-commerce</option><option>Fashion &amp; beauty</option><option>Food &amp; hospitality</option><option>Healthcare &amp; wellness</option><option>Education &amp; training</option><option>Real estate</option><option>Finance &amp; insurance</option><option>Technology / SaaS</option><option>Travel &amp; tourism</option><option>Media &amp; entertainment</option><option>Manufacturing</option><option>Professional services</option><option>Non-profit</option><option>Other</option></select><input id="f-dom2" name="domain_other" class="dom-other" placeholder="Please tell me your domain" autocomplete="off"><em class="err"></em></div>
   </div>
   <div class="cf-appt" id="cf-appt"><div class="cf-appt-in"><div class="cf-grid three">
    <div class="fld"><label for="f-date">Preferred date</label><input id="f-date" name="date" type="date"><em class="err"></em></div>
@@ -575,20 +581,36 @@ const today=new Date();date.min=today.getFullYear()+'-'+String(today.getMonth()+
 const type=()=>f.querySelector('input[name=type]:checked').value;
 const isAppt=()=>type()==='Book an appointment';
 f.querySelectorAll('input[name=type]').forEach(r=>r.addEventListener('change',()=>{appt.classList.toggle('open',isAppt());st.textContent='';st.className='cf-note'}));
-function fail(el,msg){el.classList.add('bad');el.setAttribute('aria-invalid','true');const e=el.parentNode.querySelector('.err');if(e)e.textContent=msg}
-function clear(el){el.classList.remove('bad');el.removeAttribute('aria-invalid');const e=el.parentNode.querySelector('.err');if(e)e.textContent=''}
-f.addEventListener('input',e=>{if(e.target.classList)clear(e.target)});
-function validate(){let first=null;const bad=(el,m)=>{fail(el,m);if(!first)first=el};
- const g=id=>$('#'+id);['f-name','f-mail','f-tel','f-dom','f-msg','f-date','f-time'].forEach(id=>clear(g(id)));
- const n=g('f-name').value.trim(),m=g('f-mail').value.trim(),p=g('f-tel').value.trim(),d=g('f-dom').value.trim(),s=g('f-msg').value.trim();
+const MAILFIX={'gmial.com':'gmail.com','gmai.com':'gmail.com','gamil.com':'gmail.com','gnail.com':'gmail.com','gmil.com':'gmail.com','gmail.co':'gmail.com','gmail.con':'gmail.com','gmail.cm':'gmail.com','yaho.com':'yahoo.com','yahooo.com':'yahoo.com','yahoo.con':'yahoo.com','hotmial.com':'hotmail.com','hotmal.com':'hotmail.com','hotmail.con':'hotmail.com','outlok.com':'outlook.com','outlook.con':'outlook.com','icloud.con':'icloud.com'};
+const PH={'+91':[10,10,/^[6-9][0-9]{9}$/,'Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9.'],'+1':[10,10,/^[2-9][0-9]{9}$/,'Enter a valid 10-digit US or Canadian number.'],'+44':[9,10,null,'Enter a valid UK number (9 or 10 digits, without the leading 0).'],'+971':[8,9,null,'Enter a valid UAE number (8 or 9 digits).'],'+966':[8,9,null,'Enter a valid Saudi number (8 or 9 digits).'],'+61':[9,9,null,'Enter a valid 9-digit Australian number.'],'+65':[8,8,null,'Enter a valid 8-digit Singapore number.'],'+94':[9,9,null,'Enter a valid 9-digit Sri Lankan number.']};
+function fail(el,msg,fix){el.classList.add('bad');el.setAttribute('aria-invalid','true');const e=el.closest('.fld').querySelector('.err');if(!e)return;e.textContent=msg;
+ if(fix){const b=document.createElement('button');b.type='button';b.className='fix';b.textContent=fix;b.onclick=()=>{el.value=fix;clear(el);el.focus()};e.append(' ',b,'?')}}
+function clear(el){el.classList.remove('bad');el.removeAttribute('aria-invalid');const e=el.closest('.fld').querySelector('.err');if(e)e.textContent=''}
+function mailCheck(v){if(!v)return{m:'Please enter your email address.'};if(/ /.test(v))return{m:'Email addresses cannot contain spaces.'};
+ const at=v.split('@');if(at.length!==2||!at[0])return{m:'Please include an @ in your email address, like name@company.com.'};
+ const dom=at[1].toLowerCase();if(MAILFIX[dom])return{m:'That domain looks like a typo. Did you mean',fix:at[0]+'@'+MAILFIX[dom]};
+ if(!/^[A-Za-z0-9._%+-]+$/.test(at[0])||at[0].startsWith('.')||at[0].endsWith('.')||at[0].includes('..'))return{m:'The part before the @ has characters that are not allowed.'};
+ if(!/^[a-z0-9-]+([.][a-z0-9-]+)*[.][a-z]{2,}$/i.test(dom)||dom.includes('..'))return{m:'Please enter a valid email domain, like name@company.com.'};return null}
+function telCheck(cc,v){const raw=v.trim();if(!raw)return'Please enter your phone number.';if(!/^[0-9 ()-]+$/.test(raw))return'Use digits only. Choose your country code in the box on the left.';
+ const d=raw.replace(/[^0-9]/g,'').replace(/^0+/,''),r=PH[cc];if(r){if(d.length<r[0]||d.length>r[1]||(r[2]&&!r[2].test(d)))return r[3]}else if(d.length<6||d.length>14)return'Please enter a valid phone number.';return null}
+f.addEventListener('input',e=>{if(e.target.classList&&e.target.id!=='f-cc')clear(e.target)});
+f.addEventListener('focusout',e=>{const el=e.target;
+ if(el.id==='f-mail'&&el.value.trim()){clear(el);const c=mailCheck(el.value.trim());if(c)fail(el,c.m,c.fix)}
+ if(el.id==='f-tel'&&el.value.trim()){clear(el);const c=telCheck($('#f-cc').value,el.value);if(c)fail(el,c)}});
+$('#f-dom').addEventListener('change',()=>{const o=$('#f-dom').value==='Other';$('#f-dom2').classList.toggle('show',o);if(o)$('#f-dom2').focus()});
+$('#f-cc').addEventListener('change',()=>{const t=$('#f-tel');clear(t);if(t.value.trim()){const c=telCheck($('#f-cc').value,t.value);if(c)fail(t,c)}});
+function validate(){let first=null;const bad=(el,m,fx)=>{fail(el,m,fx);if(!first)first=el};
+ const g=id=>$('#'+id);['f-name','f-mail','f-tel','f-dom','f-dom2','f-msg','f-date','f-time'].forEach(id=>clear(g(id)));
+ const n=g('f-name').value.trim(),m=g('f-mail').value.trim(),cc=g('f-cc').value,tl=g('f-tel').value.trim(),d=g('f-dom').value,s=g('f-msg').value.trim();
  if(n.length<2)bad(g('f-name'),'Please enter your name.');
- if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m))bad(g('f-mail'),'Please enter a valid email address.');
- const digits=p.replace(/\D/g,'');if(digits.length<8||digits.length>15||!/^[+\d][\d\s()\-+]*$/.test(p))bad(g('f-tel'),'Please enter a valid phone number.');
- if(d.length<2)bad(g('f-dom'),'Tell me which business or domain you work in.');
+ const mc=mailCheck(m);if(mc)bad(g('f-mail'),mc.m,mc.fix);
+ const tc=telCheck(cc,tl);if(tc)bad(g('f-tel'),tc);
+ const p=cc+' '+tl.replace(/^0+/,'');
+ let dm=d;if(!d)bad(g('f-dom'),'Please select your business domain.');else if(d==='Other'){const od=g('f-dom2').value.trim();if(od.length<2)bad(g('f-dom2'),'Please tell me which domain you work in.');else dm=od}
  if(isAppt()){if(!g('f-date').value)bad(g('f-date'),'Pick a preferred date.');if(!g('f-time').value)bad(g('f-time'),'Pick a preferred time.')}
  if(s.length<10)bad(g('f-msg'),'A few more details would help (at least 10 characters).');
  if(first){first.focus();return null}
- const o={type:type(),name:n,email:m,phone:p,domain:d,message:s};
+ const o={type:type(),name:n,email:m,phone:p,domain:dm,message:s};
  if(isAppt()){o.date=g('f-date').value;o.time=g('f-time').value;o.meeting=g('f-mode').value}
  return o}
 function compose(o){const L=['New enquiry from your portfolio','','I would like to: '+o.type,'Name: '+o.name,'Email: '+o.email,'Phone / WhatsApp: '+o.phone,'Business domain: '+o.domain];
@@ -598,9 +620,10 @@ f.addEventListener('submit',async e=>{e.preventDefault();if(f.website&&f.website
  const subj='Website enquiry — '+o.type+' — '+o.name,body=compose(o);
  if(ENDPOINT){const b=$('#cf-send');b.disabled=true;note('Sending…');
   try{const pl=Object.assign({subject:subj,access_key:KEY||undefined},o,{message_full:body}),gas=/script\.google\.com/.test(ENDPOINT);
-   const r=await fetch(ENDPOINT,gas?{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(pl)}:{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(pl)});
-   if(!gas&&!r.ok)throw 0;note('Thank you, '+o.name.split(' ')[0]+'! Your enquiry has been sent and a confirmation is on its way to your email. I will get back to you soon.','ok');f.reset();appt.classList.remove('open')}
-  catch(x){note('Could not send right now. Please email '+MAIL+' directly.','no')}b.disabled=false;return}
+   const r=await fetch(ENDPOINT,gas?{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(pl)}:{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(pl)});
+   let ok=r.ok;if(gas){const j=await r.json();ok=!!(j&&j.ok)}
+   if(!ok)throw 0;note('Thank you, '+o.name.split(' ')[0]+'! Your enquiry has been sent and a confirmation is on its way to your email. I will get back to you soon.','ok');f.reset();appt.classList.remove('open');$('#f-dom2').classList.remove('show')}
+  catch(x){note('I could not send that automatically, so your email app is opening with your details filled in — just press send. You can also write to '+MAIL+'.','no');location.href='mailto:'+MAIL+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body)}b.disabled=false;return}
  location.href='mailto:'+MAIL+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
  note('Your email app is opening with your details filled in — just press send. If nothing opens, write to '+MAIL+'.','ok')});
 $('#cf-wa').addEventListener('click',()=>{const o=validate();if(!o)return;
